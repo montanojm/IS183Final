@@ -1,4 +1,4 @@
-<button class="btn" (click)="goToCreate()">Create a tank</button>
+﻿<button class="btn" (click)="goToCreate()">Create a tank</button>
 <div *ngIf="tanks?.length > 0">
   <div class="book-card-container" *ngFor="let tank of tanks; let i = index">
     <div class="book-card" [routerLink]="['/tank',tank.id]">
@@ -8,6 +8,6 @@
       <P>Gallons: {{tank.gallons}}</P>
       <P>Active: {{tank.active}}</P>
     </div>
-    <button class="delete">X</button>
+    <button class="delete" (click)="deleteTank(tank.id)">X</button>
   </div>
 </div>
